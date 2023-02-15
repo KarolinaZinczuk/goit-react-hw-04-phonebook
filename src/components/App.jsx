@@ -15,11 +15,11 @@ const defaultContacts = [
 
 export const App = () => {
 
-  const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem("contacts")) ?? defaultContacts);
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem("contacts")) ?? defaultContacts);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    window.localStorage.setItem('Contacts', JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const addContact = ({ id, name, number }) => {
@@ -61,5 +61,5 @@ export const App = () => {
         />
       </div>
     </>
-  )
+  );
 };

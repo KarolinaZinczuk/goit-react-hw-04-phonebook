@@ -8,9 +8,17 @@ const ContactForm = ({onSubmitData }) => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setName(prevName => ({ ...prevName, [name]: value }));
+    const handleChange = e => {   
+        switch (e) {
+            case "name":
+                setName(e.target.value);
+                break;
+            case "number":
+                setNumber(e.target.value);
+                break;
+            default:
+                throw new Error();            
+        }       
     };
 
     const handleSubmit = e => {

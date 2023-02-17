@@ -45,7 +45,7 @@ export const App = () => {
   };
 
   const filterContacts = e => {
-    setFilter({ filter: e.target.value });
+    setFilter(e.target.value);
   };
 
   return (

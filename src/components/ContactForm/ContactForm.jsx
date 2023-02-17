@@ -25,7 +25,7 @@ const ContactForm = ({onSubmitData }) => {
     const handleSubmit = e => {
         e.preventDefault();
         const data = { id: nanoid(), name, number };
-        onSubmitData({data});
+        onSubmitData(data);
         inputClean();
     }
 
